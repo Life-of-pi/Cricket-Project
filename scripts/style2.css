@@ -1,0 +1,82 @@
+.body{
+    border: 0;
+    padding: 0;
+    background: black;
+    color: white;
+}
+
+
+
+
+.stadium{
+    display: block;
+    width:100%;
+    height:100vh;
+    opacity: 0.4;
+    z-index: -2;
+}
+.logo{
+    z-index: -1;
+    display: inline-block;
+    width:100%;
+    height:70vh;
+    top: 100px;
+}
+.play-btn{
+    opacity: 1;
+}
+
+.final-scorecard{
+    opacity: 1; 
+}
+.play-btn:hover,.final-scorecard:hover{
+    opacity: 0.89;
+    color: lawngreen;
+}
+.hit-1,.hit-2{
+    opacity: 1;
+}
+.hit-1:hover,.hit-2:hover{
+    opacity: 0.89;
+}
+
+/* play area with background image */
+#background{
+    background-image: url("stadium.png");
+    color: white;
+    z-index: -2;
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+}
+/* nvaigation bar */
+.navbar{
+    padding-left: 100px;
+  }
+
+.nav-text{
+    font-size: 2rem;
+}
+.nav-item{
+    padding: 0;
+    margin: 0;
+    width: 5rem;
+    height: inherit;
+}
+
+#timer{
+    position: absolute;
+    z-index: 2;
+    top:52%;
+    bottom: 325px;
+    right: 48.5%;
+}
+
+#start-game{
+    font-size: 2.5rem;
+    text-shadow: 2px 2px #000f;
+}
+
+
+
+/* <img src="https://i.ibb.co/VDqdWts/stadium.jpg" class="stadium" alt=""> */

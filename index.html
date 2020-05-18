@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket</title>
+
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- bootstrap cdn -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/ac0c962c0e.js" crossorigin="anonymous"></script>
+  
+</head>
+
+<body class="body">
+
+    <section class="playground">
+
+        <!-- nav bar for sound on off buttons -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="">
+                <img src="cricket-logo.png" width="80" height="50" class="d-inline-block align-top" alt=""
+                    loading="lazy">
+                <span class="nav-text">Cricket</span>
+            </a>
+            <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#hamburger" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button> -->
+            <div class="collapse navbar-collapse" id="hamburger">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <!-- <a class="nav-link" href="">Sound</a> -->
+                        <button onclick="ToggleMusic();" type="button" class="btn btn-info">
+                            <!-- <audio id="bat-hit-sound" src="ball-hit.mp3"></audio> -->
+                            <i class="fas fa-volume-up" id="sound-on"></i>
+                            <i class="fas fa-volume-mute" style="display:none;" id="sound-off"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
+
+        <!-- Play area & batsman  -->
+        <div class="container-fluid pt-5" id="background">
+            <div class="row">
+
+                <!-- left half batsman image -->
+                <div class="col-md-12 col-lg-3">
+                    <!-- batsman -->
+                    <img class="logo" src="https://i.ibb.co/S7shNRH/logo.png" alt="batsman">
+                </div>
+
+                <!-- Play button & full scorecard -->
+                <div class="col-md-12 col-lg-2 text-center mr-5">
+                    <a class="btn btn-block btn-info mt-4 pt-3" onclick="EnableHit();" id="start-game" href="#">Play </a>
+                    <a class="btn btn-block btn-info mt-4 pt-3" id="scoreboard-new-window" target="_blank" href="index2.html">SCOREBOARD</a>
+
+                </div>
+
+                <!-- right half score and play -->
+                <div class="col-md-12 col-lg-6 m-0 p-0">
+
+
+                    <!--small scorecard-containers -->
+                    <div class="container-fluid p-0 m-0 text-center">
+                        <div class="row">
+                            <div class="col-lg-4">
+
+                                <!-- scorecard for team 1 -->
+                                <div class="container text-center">
+                                    <div class="row border p-2">
+                                        <div class="col-lg-12">
+                                            <h4 class="team-name-scorecard">Team 1</h4>
+                                        </div>
+                                    </div>
+                                    <div class="row border p-2">
+                                        <div class="col-lg-6">
+                                            <h6>Score:</h6>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <h6 id="score-scorecard">54</h6>
+                                        </div>
+                                    </div>
+                                    <div class="row border p-2">
+                                        <div class="col-lg-6">
+                                            <h6>Balls Left:</h6>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <h6 id="balls-left-scorecard">60</h6>
+                                        </div>
+                                    </div>
+                                    <!-- <button type="button" class="btn btn-info mt-4 w-100">
+                                        Hit
+                                    </button> -->
+                                </div>
+                                <!-- onclick="StartTimer();" -->
+                                <a class="hit-class1 btn btn-block btn-danger mt-4 hit-class disabled" id="hit-1" href="#">   
+                                    Hit
+                                </a>
+                            </div>
+
+                            
+                            <!-- Batsman -gif -->
+                            <div class="col-lg-4 text-center">
+                                <img src="Bat1.png" id="batsman-1" width="200px" height="200px" alt="">
+                            </div>
+
+
+                            <div class="col-lg-4">
+
+                                <!-- small scorecard for team 2 -->
+                                <div class="container">
+                                    <div class="row border p-2">
+                                        <div class="col-lg-12">
+                                            <h4 class="team-name-scorecard">Team 2</h4>
+                                        </div>
+                                    </div>
+                                    <div class="row border p-2">
+                                        <div class="col-lg-6">
+                                            <h6>Score:</h6>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <h6 id="score-scorecard2">54</h6>
+                                        </div>
+                                    </div>
+                                    <div class="row border p-2">
+                                        <div class="col-lg-6">
+                                            <h6>Balls Left:</h6>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <h6 id="balls-left-scorecard2">60</h6>
+                                        </div>
+                                    </div>
+                                    <!-- <button type="button" class="btn btn-info mt-4 w-100 disabled">
+                                        Hit
+                                    </button> -->
+                                </div>
+                                <!-- onclick="StartTimer();" -->
+                                <a class="hit-class2 btn btn-block btn-danger mt-4 disabled"  id="hit-2" href="#">Hit</a>
+                            </div>
+                        </div>
+
+                        <!-- row for timer counter -->
+                        <div class="row text-center">
+                            <div class="col-lg-12" id="timer-running">
+                                <h3> Timer <span id="timer">20</span></h3>
+                                <img src="timer.png" width="70" height="50" style="position:relative; z-index: 1;"
+                                    alt="">
+                            </div>
+                            <div class="col-lg-12" style="display: none;" id="timer-over">
+                                <h3>Times Up!</h3>
+                            </div>
+                        </div>
+
+                        <!-- player after pressing hit 1-->
+
+                        <!-- Full scorecard for team 1 -->
+                        <div class="row mt-4 live-update">
+                            <div class="col-lg-6">
+                                <table class="table table-sm table-dark">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Team 1</th>
+                                            <th scope="col">B1</th>
+                                            <th scope="col">B2</th>
+                                            <th scope="col">B3</th>
+                                            <th scope="col">B4</th>
+                                            <th scope="col">B5</th>
+                                            <th scope="col">B6</th>
+                                            <th scope="col">Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="team1-tbody">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            
+
+                            <!-- <div class="col-lg-1">
+
+                            </div> -->
+                            <!-- Full scorecard for team 2-->
+                            <div class="col-lg-6">
+                                <table class="table table-sm table-dark">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Team 2</th>
+                                            <th scope="col">B1</th>
+                                            <th scope="col">B2</th>
+                                            <th scope="col">B3</th>
+                                            <th scope="col">B4</th>
+                                            <th scope="col">B5</th>
+                                            <th scope="col">B6</th>
+                                            <th scope="col">Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="team2-tbody">
+
+                                    </tbody>
+                                </table>
+                                <script src="scripts\create-table.js"></script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+</body>
+<script>
+    function EnableHit(){
+    document.getElementById('hit-1').classList.remove('disabled');
+}
+
+let music = true;
+var crowd_audio = new Audio('../sfx/crowd-cheering.mp3');
+crowd_audio.play();
+crowd_audio.volume = 0.2;
+
+  function ToggleMusic(){
+      if(music === false){
+        document.getElementById('sound-off').style.display = "none";
+        document.getElementById("sound-on").style.display = "inline";
+          crowd_audio.play();
+          crowd_audio.loop = true;
+          music = true;
+      }else{
+        document.getElementById('sound-on').style.display = "none";
+        document.getElementById("sound-off").style.display = "inline";
+        crowd_audio.pause();
+        music = false;
+      }
+  }
+
+</script>
+<script src="scripts\timer.js"></script>
+<script src="scripts\import-export.js"></script>
+</html>
+
+<!-- <img src="https://i.ibb.co/VDqdWts/stadium.jpg" class="stadium" alt="">
+    <img class="logo" src="https://i.ibb.co/S7shNRH/logo.png" alt=""> -->

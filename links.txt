@@ -1,0 +1,5 @@
+-play button
+https://dabuttonfactory.com/button.png?t=Play&f=Open+Sans-Bold&ts=36&tc=fff&tshs=3&tshc=000&hp=45&vp=20&c=10&bgt=unicolored&bgc=1ad1d1
+
+-Hit
+https://dabuttonfactory.com/button.png?t=Hit&f=Open+Sans-Bold&ts=36&tc=fff&tshs=3&tshc=000&hp=45&vp=20&c=10&bgt=unicolored&bgc=1ad1d1
