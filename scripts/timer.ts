@@ -91,7 +91,7 @@ let score_scorecard_id;
 let balls_left_id;
 let player_id;
 
-var audio = new Audio('../sfx/ball-hit.mp3');
+var audio = new Audio('ball-hit.mp3');
 var batsman = document.getElementById("batsman-1");
 
 function DisplayScore() {

@@ -74,7 +74,7 @@ var ballsLeft = 60;
 var score_scorecard_id;
 var balls_left_id;
 var player_id;
-var audio = new Audio('../sfx/ball-hit.mp3');
+var audio = new Audio('ball-hit.mp3');
 var batsman = document.getElementById("batsman-1");
 function DisplayScore() {
     var element = event.target;
