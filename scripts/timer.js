@@ -38,7 +38,7 @@ function CountDown(clickedElement) {
     document.getElementById("timer-over").style.display = "none"; // toggle between timer and timesUP
     document.getElementById("timer-running").style.display = "block";
     clickedElement.classList.remove("disabled");
-    var counter = 15;
+    var counter = 50;
     var timer = setInterval(function () {
         if (counter < 1) {
             clearInterval(timer);

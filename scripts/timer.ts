@@ -46,7 +46,7 @@ function CountDown(clickedElement) {
     document.getElementById("timer-running").style.display = "block";
 
     clickedElement.classList.remove("disabled");
-    let counter = 15;
+    let counter = 50;
     const timer = setInterval(() => {
 
         if (counter < 1) {
